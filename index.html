@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biographie – Dembélé Tidiane, étudiante en informatique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Literata:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #eef2f7;
+    --panel: #14213d;
+    --ink: #1b2437;
+    --muted: #5b6577;
+    --accent: #2a4bd7;
+    --spark: #f2b705;
+    --line: #c9d2e0;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Literata", Georgia, serif;
+    line-height: 1.7;
+  }
+  h1, h2, h3 { font-family: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif; line-height: 1.15; }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 3px solid var(--spark); outline-offset: 2px; }
+
+  .page { display: grid; grid-template-columns: 320px 1fr; min-height: 100vh; }
+
+  /* Panneau identité */
+  aside {
+    background: var(--panel);
+    color: #f3f6fb;
+    padding: 3rem 2rem;
+    position: sticky; top: 0; height: 100vh;
+    display: flex; flex-direction: column; gap: 1.5rem;
+  }
+  .monogram {
+    width: 112px; height: 112px; border-radius: 50%;
+    background: var(--spark); color: var(--panel);
+    display: grid; place-items: center;
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 2.8rem;
+  }
+  aside h1 { font-size: 2.2rem; }
+  aside .role { color: #b9c4dc; font-size: 1rem; }
+  aside dl { display: grid; gap: .9rem; font-size: .95rem; }
+  aside dt { color: #8fa0c4; font-size: .85rem; }
+  aside dd { margin: 0; }
+  aside a { color: var(--spark); }
+
+  /* Contenu */
+  main { padding: 4rem 3.5rem; max-width: 52rem; }
+  section + section { margin-top: 3.5rem; }
+  h2 { font-size: 1.7rem; margin-bottom: 1.2rem; }
+  .intro { font-size: 1.2rem; max-width: 40rem; }
+
+  /* Parcours : vraie chronologie */
+  .timeline { list-style: none; padding: 0 0 0 1.6rem; border-left: 2px solid var(--line); }
+  .timeline li { position: relative; padding-bottom: 1.8rem; }
+  .timeline li::before {
+    content: ""; position: absolute; left: -2.1rem; top: .55rem;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--bg); border: 3px solid var(--accent);
+  }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline li:last-child::before { background: var(--spark); border-color: var(--spark); }
+  .timeline .year { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; color: var(--accent); }
+  .timeline h3 { font-size: 1.15rem; }
+  .timeline p { color: var(--muted); max-width: 38rem; }
+
+  /* Compétences */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem 2.5rem; }
+  .skills h3 { font-size: 1rem; margin-bottom: .4rem; }
+  .skills ul { padding-left: 1.1rem; color: var(--muted); }
+
+  /* Projets */
+  .project { padding: 1.2rem 0; border-top: 1px solid var(--line); }
+  .project h3 { font-size: 1.15rem; }
+  .project p { color: var(--muted); max-width: 40rem; }
+
+  blockquote {
+    border-left: 4px solid var(--spark);
+    padding-left: 1.2rem; font-size: 1.15rem; max-width: 38rem;
+  }
+
+  footer { margin-top: 3.5rem; color: var(--muted); font-size: .85rem; }
+
+  @media (max-width: 860px) {
+    .page { grid-template-columns: 1fr; }
+    aside { position: static; height: auto; padding: 2.5rem 1.5rem; }
+    main { padding: 2.5rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <aside>
+    <div class="monogram" aria-hidden="true">DT</div>
+    <div>
+      <h1>Dembélé Tidiane</h1>
+      <p class="role">Étudiante en Master 1 Informatique</p>
+    </div>
+    <dl>
+      <div><dt>Née le</dt><dd>14 mars 2002, à Bouaké</dd></div>
+      <div><dt>Vit à</dt><dd>Abidjan, Côte d’Ivoire</dd></div>
+      <div><dt>Langues</dt><dd>Français, anglais, dioula</dd></div>
+      <div><dt>Contact</dt><dd><a href="mailto:tidiane.dembele@exemple.ci">tidiane.dembele@exemple.ci</a></dd></div>
+    </dl>
+  </aside>
+
+  <main>
+    <section>
+      <h2>Qui est Tidiane ?</h2>
+      <p class="intro">
+        Passionnée par les systèmes d’information, Tidiane aime comprendre comment les choses fonctionnent
+        avant de les construire. Elle prépare un master en informatique et souhaite travailler
+        dans le développement d’applications utiles à la vie quotidienne.
+      </p>
+    </section>
+
+    <section>
+      <h2>Parcours</h2>
+      <ol class="timeline">
+        <li>
+          <span class="year">2020</span>
+          <h3>Baccalauréat série C</h3>
+          <p>Obtenu au Lycée Moderne de Bouaké, avec mention bien. Premier contact avec la programmation en club informatique.</p>
+        </li>
+        <li>
+          <span class="year">2020 – 2023</span>
+          <h3>Licence en Informatique</h3>
+          <p>Trois années consacrées aux bases de données, aux réseaux et au développement web.</p>
+        </li>
+        <li>
+          <span class="year">2022</span>
+          <h3>Stage de deux mois en entreprise</h3>
+          <p>Participation à la mise en place d’un outil interne de suivi des demandes de support.</p>
+        </li>
+        <li>
+          <span class="year">Depuis 2024</span>
+          <h3>Master 1 Informatique</h3>
+          <p>Spécialisation en développement logiciel et gestion de projet.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Compétences</h2>
+      <div class="skills">
+        <div>
+          <h3>Développement</h3>
+          <ul><li>HTML, CSS, JavaScript</li><li>Python</li><li>SQL</li></ul>
+        </div>
+        <div>
+          <h3>Outils</h3>
+          <ul><li>Git et GitHub</li><li>Linux</li><li>Figma</li></ul>
+        </div>
+        <div>
+          <h3>Qualités</h3>
+          <ul><li>Travail en équipe</li><li>Rigueur</li><li>Curiosité</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projets</h2>
+      <div class="project">
+        <h3>Gestion de bibliothèque universitaire</h3>
+        <p>Application web permettant de suivre les prêts et retours d’ouvrages. Projet de fin de licence.</p>
+      </div>
+      <div class="project">
+        <h3>Site du club informatique</h3>
+        <p>Conception et mise en ligne du site vitrine du club, avec calendrier des ateliers.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Sa devise</h2>
+      <blockquote>Comprendre d’abord, construire ensuite.</blockquote>
+    </section>
+
+    <footer>Page de test – les informations présentées sont fictives.</footer>
+  </main>
+
+</div>
+</body>
+</html>
